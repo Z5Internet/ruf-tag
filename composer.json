@@ -1,0 +1,22 @@
+{
+    "name": "darrenmerrett/ruf-tag",
+    "description": "React tag",
+    "keywords": ["laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Darren Merrett",
+            "email": "darren.merrett@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*",
+        "rtconner/laravel-tagging": "~2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "darrenmerrett\\ReactTag\\": "src/"
+        }
+    }
+}
