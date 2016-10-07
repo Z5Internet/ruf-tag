@@ -1,0 +1,1 @@
+"use strict";module.exports={childRoutes:[{path:"settings/tags",getComponent:function(t,s){require.ensure([],function(){s(null,require("../../../../../../../../../ruf/src/resources/assets/js/src/app/Auth/Settings/components/Settings"))},"auth/settings")}}]};
