@@ -35,10 +35,14 @@ class BatchType extends GraphQLType {
                 'type' => Type::string(),
                 'description' => 'Name',
             ],
-#            'options' => [
-#                'type' => Type::listOf(GraphQL::type('BatchOptions')),
-#                'description' => 'Options',
-#            ],
+            'options' => [
+                'type' => GraphQL::type('batchOptions'),
+                'description' => 'Options',
+            ],
+            'tags' => [
+                'type' => Type::listOf(GraphQL::type('batchTags')),
+                'description' => 'Tags',
+            ],
 		];
 
     }

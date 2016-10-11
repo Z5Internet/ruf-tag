@@ -21,6 +21,7 @@ class BatchsQuery extends Query {
     {
         return [
 			'id' => ['name' => 'id', 'type' => Type::int()],
+            'type' => ['name' => 'type', 'type' => Type::string()],
         ];
     }
 

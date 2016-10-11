@@ -31,12 +31,19 @@ class ReactTagServiceProvider extends ServiceProvider
         ], 'migrations');
 
         GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchType', 'batch');
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsType', 'batchOptions');
         GraphQL::addQuery('batchs', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchsQuery');
         GraphQL::addMutation('AddBatch', 'darrenmerrett\ReactTag\app\GraphQL\Query\AddBatchMutation');
 
         GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchNamesType', 'batchNames');
         GraphQL::addQuery('batchNames', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchNamesQuery');
+
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsType', 'batchOptions');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsSelectionsType', 'batchOptionsSelections');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchTagsType', 'batchTags');
+
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\TagType', 'tag');
+        GraphQL::addMutation('AddTag', 'darrenmerrett\ReactTag\app\GraphQL\Query\AddTagMutation');
+
 
     }
     
@@ -56,9 +63,13 @@ class ReactTagServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom($this->configPath(), 'DM/react-tag');
 
-        foreach (config('DM.react-tag')['tag_batches'] as $key => $value) {
+        if (array_get(config('DM.react-tag'),'tag_batches')) {
 
-            config(['DM.react-tag.tag_batches.'.$key.'.slug' => str_slug($value['name'])]);
+            foreach (config('DM.react-tag')['tag_batches'] as $key => $value) {
+
+                config(['DM.react-tag.tag_batches.'.$key.'.slug' => str_slug($value['name'])]);
+
+            }
 
         }
 

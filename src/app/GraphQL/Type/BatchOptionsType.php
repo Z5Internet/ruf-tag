@@ -9,7 +9,7 @@ class BatchOptionsType extends GraphQLType {
 
     protected $attributes = [
         'name' => 'batchOptions',
-        'description' => 'Batch options',
+        'description' => 'Batch Options',
     ];
 
     public function fields() {
@@ -17,10 +17,10 @@ class BatchOptionsType extends GraphQLType {
         return [
 			'quantity' => [
 				'type' => Type::int(),
-				'description' => 'Quantity',
+				'description' => 'batch options quantity',
 			],
 			'selections' => [
-				'type' => Type::int(),
+				'type' => Type::listOf(GraphQL::type('batchOptionsSelections')),
 				'description' => 'Added by',
 			],
 		];

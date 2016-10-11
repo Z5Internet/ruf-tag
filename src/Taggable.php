@@ -60,9 +60,24 @@ trait Taggable
 
 		$options = json_decode($checkBatch->options);
 
-		if (!is_null($options->selections) && !in_array($tagName, $options->selections)) {
+		if (!is_null($options->selections)) {
 
-			throw new \Exception('Tag not in selection');
+			$found = false;
+
+			foreach($options->selections as $ts) {
+
+				if ($ts->slug == $tagName) {
+
+					$found = true;
+				}
+
+			}
+
+			if (!$found) {
+
+				throw new \Exception('Tag not in selection');
+
+			}
 
 		}	
 
@@ -79,7 +94,7 @@ trait Taggable
 			'tag_batch_id' => $batch_id,
 			'added_by' => Auth::id(),
 		));
-		
+
 		$this->tagged()->save($tagged);
 
 		static::$taggingUtility->incrementCount($tagName, $tagSlug, 1);
