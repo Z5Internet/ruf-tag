@@ -8,7 +8,7 @@ use GraphQl;
 class BatchOptionsType extends GraphQLType {
 
     protected $attributes = [
-        'name' => 'batchOptions',
+        'name' => 'BatchOptions',
         'description' => 'Batch Options',
     ];
 
@@ -20,7 +20,7 @@ class BatchOptionsType extends GraphQLType {
 				'description' => 'batch options quantity',
 			],
 			'selections' => [
-				'type' => Type::listOf(GraphQL::type('batchOptionsSelections')),
+				'type' => Type::listOf(GraphQL::type('BatchOptionsSelections')),
 				'description' => 'Added by',
 			],
 		];

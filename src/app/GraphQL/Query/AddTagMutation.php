@@ -15,7 +15,7 @@ class AddTagMutation extends Mutation {
 
     public function type()
     {
-        return GraphQL::type('tag');
+        return GraphQL::type('Tag');
     }
 
     public function args()

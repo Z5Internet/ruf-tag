@@ -8,7 +8,7 @@ use GraphQl;
 class BatchOptionsSelectionsType extends GraphQLType {
 
     protected $attributes = [
-        'name' => 'batchOptionsSelections',
+        'name' => 'BatchOptionsSelections',
         'description' => 'Batch Options Selections',
     ];
 

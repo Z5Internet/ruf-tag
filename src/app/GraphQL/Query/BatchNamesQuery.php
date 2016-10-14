@@ -9,12 +9,12 @@ use darrenmerrett\ReactTag\App\Http\Controllers\BatchController;
 class BatchNamesQuery extends Query {
 
     protected $attributes = [
-        'name' => 'batchNames'
+        'name' => 'BatchNamesQuery'
     ];
 
     public function type()
     {
-        return Type::listOf(GraphQL::type('batchNames'));
+        return Type::listOf(GraphQL::type('BatchNames'));
     }
 
     public function args()

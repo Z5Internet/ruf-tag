@@ -8,7 +8,7 @@ use GraphQl;
 class TagType extends GraphQLType {
 
     protected $attributes = [
-        'name' => 'tag',
+        'name' => 'Tag',
         'description' => 'Tag',
     ];
 

@@ -15,7 +15,7 @@ class AddBatchMutation extends Mutation {
 
     public function type()
     {
-        return GraphQL::type('batch');
+        return GraphQL::type('Batch');
     }
 
     public function args()

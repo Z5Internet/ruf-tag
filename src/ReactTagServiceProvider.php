@@ -30,18 +30,18 @@ class ReactTagServiceProvider extends ServiceProvider
             __DIR__.'/./migrations/' => database_path('migrations')
         ], 'migrations');
 
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchType', 'batch');
-        GraphQL::addQuery('batchs', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchsQuery');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchType', 'Batch');
+        GraphQL::addQuery('BatchsQuery', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchsQuery');
         GraphQL::addMutation('AddBatch', 'darrenmerrett\ReactTag\app\GraphQL\Query\AddBatchMutation');
 
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchNamesType', 'batchNames');
-        GraphQL::addQuery('batchNames', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchNamesQuery');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchNamesType', 'BatchNames');
+        GraphQL::addQuery('BatchNamesQuery', 'darrenmerrett\ReactTag\app\GraphQL\Query\BatchNamesQuery');
 
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsType', 'batchOptions');
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsSelectionsType', 'batchOptionsSelections');
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchTagsType', 'batchTags');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsType', 'BatchOptions');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchOptionsSelectionsType', 'BatchOptionsSelections');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\BatchTagsType', 'BatchTags');
 
-        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\TagType', 'tag');
+        GraphQL::addType('darrenmerrett\ReactTag\app\GraphQL\Type\TagType', 'Tag');
         GraphQL::addMutation('AddTag', 'darrenmerrett\ReactTag\app\GraphQL\Query\AddTagMutation');
 
 

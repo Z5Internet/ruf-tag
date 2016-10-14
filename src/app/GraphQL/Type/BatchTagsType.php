@@ -8,7 +8,7 @@ use GraphQl;
 class BatchTagsType extends GraphQLType {
 
     protected $attributes = [
-        'name' => 'batchTags',
+        'name' => 'BatchTags',
         'description' => 'Batch Tags',
     ];
 
