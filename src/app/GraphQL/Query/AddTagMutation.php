@@ -3,7 +3,6 @@
 use GraphQL;
 use GraphQL\Type\Definition\Type;
 use Folklore\GraphQL\Support\Mutation;    
-use App\companies;
 
 use darrenmerrett\ReactTag\App\Http\Controllers\TagController;
 
