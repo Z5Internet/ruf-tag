@@ -10,15 +10,19 @@ use Team;
 
 use Auth;
 
+use Nuwave\Relay\Traits\GlobalIdTrait;
+
 class BatchController extends Controller {
+
+    use GlobalIdTrait;
 
     public function __construct() {
 
     }
 
-	public function getBatchs($args) {
+    public function getBatchs($args) {
 
-    	$batchs = TagBatch::where('tid', Team::currentTeam());
+        $batchs = TagBatch::where('tid', Team::currentTeam());
 
         $type = '';
 
@@ -52,9 +56,9 @@ class BatchController extends Controller {
             }
 
             $db = Tagged::where('tid', Team::currentTeam());
-            $db = $db->where('taggable_id',$args['id']);
             $db = $db->where('taggable_type',$type);
-            $db = $db->get();
+
+            $db = $this->getDBById($db, $args['id']);
 
             $temp = []; 
 
@@ -66,14 +70,12 @@ class BatchController extends Controller {
 
                 $temp = array_add($temp,$bidIndex,[]);
 
-                $temp[$bidIndex] = array_add($temp[$bidIndex],$tdb->taggable_id,[]);
-
-                $temp[$bidIndex][$tdb->taggable_id] = [
+                array_push($temp[$bidIndex], [
 
                     'name' => $tdb->tag_name,
                     'slug' => $tdb->tag_slug,
 
-                ];
+                ]);
 
             }
 
@@ -87,7 +89,7 @@ class BatchController extends Controller {
 
         return $batchs;
 
-	}
+    }
 
     public function getBatchNames() {
 
@@ -168,6 +170,44 @@ class BatchController extends Controller {
     private function getBatchConfig() {
 
         return config('DM.react-tag.tag_batches');
+
+    }
+
+    private function getDBById($db, $id) {
+
+        if (is_string($id)) {
+
+            return $this->getDBByStringId($db, $id);
+
+        }
+
+        return $this->getDBByNumericId($db, $id);
+
+    }
+
+    private function getDBByNumericId($db, $id) {
+
+        $db = $db->where('taggable_id',$id);
+        $db = $db->get();
+
+        return $db;
+
+    }
+
+    private function getDBByStringId($db, $id) {
+
+        $stringId = $this->decodeGlobalId($id)[1];
+
+        $db1 = $db->where('taggable_id', $stringId);
+        $db1 = $db1->get();
+
+        if (!$db1) {
+
+            $db1 = $this->getDBByNumericId($db, $id);
+
+        }
+
+        return $db1;
 
     }
 

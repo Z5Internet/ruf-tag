@@ -66,7 +66,7 @@ trait Taggable
 
 			foreach($options->selections as $ts) {
 
-				if ($ts->slug == $tagName) {
+				if ($ts->name == $tagName) {
 
 					$found = true;
 				}
@@ -88,7 +88,7 @@ trait Taggable
 		}
 
 		$tagged = new Tagged(array(
-			'tag_name'=>call_user_func($displayer, $tagName),
+			'tag_name'=>$tagName, #call_user_func($displayer, $tagName),
 			'tag_slug'=>$tagSlug,
 			'tid' => Team::currentTeam(),
 			'tag_batch_id' => $batch_id,
