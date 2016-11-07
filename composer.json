@@ -1,12 +1,12 @@
 {
-    "name": "darrenmerrett/ruf-tag",
+    "name": "z5internet/ruf-tag",
     "description": "React tag",
     "keywords": ["laravel"],
     "license": "MIT",
     "authors": [
         {
             "name": "Darren Merrett",
-            "email": "darren.merrett@gmail.com"
+            "email": "github@z5.ltd"
         }
     ],
     "require": {
