@@ -1,4 +1,4 @@
-<?php namespace darrenmerrett\ReactTag;
+<?php namespace z5internet\ReactTag;
 
 use Illuminate\Support\ServiceProvider;
 use Conner\Tagging\Contracts\TaggingUtility;

@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "darrenmerrett\\ReactTag\\": "src/"
+            "z5internet\\ReactTag\\": "src/"
         }
     }
 }

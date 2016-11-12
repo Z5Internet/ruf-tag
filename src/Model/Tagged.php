@@ -1,4 +1,4 @@
-<?php namespace darrenmerrett\ReactTag\Model;
+<?php namespace z5internet\ReactTag\Model;
 
 use Conner\Tagging\Model\Tagged as RTTagged;
 

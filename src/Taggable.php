@@ -1,9 +1,9 @@
-<?php namespace darrenmerrett\ReactTag;
+<?php namespace z5internet\ReactTag;
 
 use Conner\Tagging\Taggable as RTTaggable;
 
-use darrenmerrett\ReactTag\Model\Tagged;
-use darrenmerrett\ReactTag\Model\TagGroup;
+use z5internet\ReactTag\Model\Tagged;
+use z5internet\ReactTag\Model\TagGroup;
 
 use Conner\Tagging\Events\TagAdded;
 use Conner\Tagging\Events\TagRemoved;
@@ -13,7 +13,7 @@ use Team;
 
 use Auth;
 
-use darrenmerrett\ReactTag\Model\TagBatch;
+use z5internet\ReactTag\Model\TagBatch;
 
 /**
  * Copyright (C) 2014 Robert Conner

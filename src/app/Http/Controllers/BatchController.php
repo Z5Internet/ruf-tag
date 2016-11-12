@@ -1,10 +1,10 @@
-<?php namespace darrenmerrett\ReactTag\App\Http\Controllers;
+<?php namespace z5internet\ReactTag\App\Http\Controllers;
 
-use darrenmerrett\ReactUserFramework\App\Http\Controllers\Controller;
+use z5internet\ReactUserFramework\App\Http\Controllers\Controller;
 
-use darrenmerrett\ReactTag\Model\TagBatch;
+use z5internet\ReactTag\Model\TagBatch;
 
-use darrenmerrett\ReactTag\Model\Tagged;
+use z5internet\ReactTag\Model\Tagged;
 
 use Team;
 

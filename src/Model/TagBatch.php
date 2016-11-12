@@ -1,4 +1,4 @@
-<?php namespace darrenmerrett\ReactTag\Model;
+<?php namespace z5internet\ReactTag\Model;
 
 use Conner\Tagging\Contracts\TaggingUtility;
 use Illuminate\Database\Eloquent\Model as Eloquent;
