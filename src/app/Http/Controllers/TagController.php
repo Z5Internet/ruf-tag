@@ -10,7 +10,7 @@ use Team;
 
 use Auth;
 
-use Nuwave\Relay\Traits\GlobalIdTrait;
+use Nuwave\Lighthouse\Support\Traits\GlobalIdTrait;
 
 class TagController extends Controller {
 
